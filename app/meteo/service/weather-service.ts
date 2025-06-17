@@ -43,18 +43,19 @@ async function getAllForecast(globalIdLocal: GLOBAL_LOCAL): Promise<Ipma> {
             throw new Error("Failed to fetch data");
         }
         return await response.json();
-    } catch (exeption) {
-        throw new Error(`Failed to load forecast: ${(exeption as Error).message}`);
+    } catch (e) {
+        throw new Error(`Failed to load forecast: ${(e as Error).message}`);
     }
 }
 
 export async function getForecasts(): Promise<Weather[]> {
-    const forecasts = await getAllForecast(GLOBAL_LOCAL.FARO);
-    if (!forecasts) {
-        throw new Error('No forecast found for today');
+    try {
+        const forecasts = await getAllForecast(GLOBAL_LOCAL.FARO);
+        return forecasts.data;
+    } catch (e) {
+        throw new Error(`No forecast found for today: ${(e as Error).message}`);
     }
 
-    return forecasts.data;
 }
 
 
