@@ -36,25 +36,34 @@ export interface Weather {
  * @returns 
  */
 
-async function getAllForecast(globalIdLocal: GLOBAL_LOCAL): Promise<Ipma> {
-    // Simulate 3 second delay
-    await new Promise(resolve => setTimeout(resolve, 3000));
-
-    const response = await fetch(getAllForecastUrl(globalIdLocal));
-    const data = await response.json();
-    return data;
+function delay(ms: number) {
+  return new Promise(resolve => setTimeout(resolve, ms));
 }
 
+async function getAllForecast(globalIdLocal: GLOBAL_LOCAL): Promise<Ipma> {
+  try {
+    await delay(1500); // 1.5 seconds delay
+
+    const response = await fetch(getAllForecastUrl(globalIdLocal));
+    if (!response.ok) {
+      throw new Error("Failed to fetch data");
+    }
+    return await response.json();
+  } catch (exeption) {
+    throw new Error(`Failed to load forecast: ${(exeption as Error).message}`);
+  }
+}
 
 export async function getForecasts(): Promise<Weather[]> {
     const forecasts = await getAllForecast(GLOBAL_LOCAL.FARO);
-
     if (!forecasts) {
         throw new Error('No forecast found for today');
     }
 
     return forecasts.data;
 }
+
+
 
 
 

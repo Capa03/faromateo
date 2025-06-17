@@ -103,7 +103,7 @@ const ShowMeteo = ({ meteo }: { meteo: Promise<Weather[]> }) => {
                         <button
                             key={index}
                             onClick={() => setSelected(day)}
-                            className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-sm p-4 text-center hover:shadow-md transition cursor-pointer"
+                            className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-sm p-4 text-center hover:shadow-md transition cursor-pointer hover:bg-gray-700"
                         >
                             <p className="text-sm font-medium text-gray-500 dark:text-gray-400">
                                 {new Date(day.forecastDate).toLocaleDateString('pt-PT', {

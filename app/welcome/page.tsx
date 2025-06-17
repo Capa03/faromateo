@@ -8,7 +8,7 @@ import React from 'react'
 
 const Welcome = () => {
     return (
-        <section className="text-center py-12 px-4">
+        <section className="text-center py-12 px-4 space-y-4">
             <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl">
                 Welcome to Faro Meteo
             </h1>
@@ -18,7 +18,7 @@ const Welcome = () => {
 
             <Link
                 href="/meteo"
-                className="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900"
+                className="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-white bg-gray-900 rounded-lg hover:bg-gray-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900"
             >
                 See weather
                 <svg

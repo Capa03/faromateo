@@ -2,7 +2,7 @@ import { Suspense } from 'react';
 import Breadcrumb from '../../components/breadcrumb';
 import ShowMeteo from '../../components/show-meteo';
 import { getForecasts, Weather } from './service/weather-service';
-import SkeletonMeteo from './skeleton';
+import Loading from './loading';
 
 const breadCrumList = [
     { label: 'Welcome', href: '/welcome' },
@@ -21,7 +21,7 @@ const Meteo = async () => {
             <div className="w-full self-start pl-6">
                 <Breadcrumb breadcrumbList={breadCrumList} />
             </div>
-            <Suspense fallback={<SkeletonMeteo />}>
+            <Suspense fallback={<Loading />}>
                 <ShowMeteo meteo={weather} />
             </Suspense>
         </section>
