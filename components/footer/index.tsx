@@ -2,6 +2,11 @@ import Link from "next/link"
 
 const LINKEDIN = 'https://www.linkedin.com/in/davidcapa03/';
 const GITHUB = 'https://github.com/Capa03';
+/**
+ * Used the same component base form top bar
+ * https://tailwindcss.com/plus/ui-blocks/application-ui/navigation/navbars 
+ * @returns 
+ */
 export const Footer = () => {
     return (
         <div className='bg-gray-800 text-gray-400'>
@@ -11,7 +16,7 @@ export const Footer = () => {
                         <span className="text-sm font-medium text-gray-300">© 2025 Faro Meteo</span>
                     </div>
 
-                    {/* {Scg getted from https://tw-elements.com/docs/react/components/social-buttons/} */}
+                    {/* {Svg getted from https://tw-elements.com/docs/react/components/social-buttons/} */}
                     <div className="flex space-x-4">
                         <Link href={ GITHUB } className="text-sm hover:text-white transition">
                             <svg
