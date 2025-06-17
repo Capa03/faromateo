@@ -18,7 +18,7 @@ interface Props {
 
 const Breadcrumb: React.FC<Props> = ({ breadcrumbList }) => {
     return (
-        <nav className="w-full max-w-xl py-2 text-gray-700" aria-label="Breadcrumb">
+        <nav className="w-full max-w-xl text-gray-700" aria-label="Breadcrumb">
             <ol className="flex flex-wrap items-center space-x-2 rtl:space-x-reverse">
                 {breadcrumbList.map((item, index) => {
                     const isLast = index === breadcrumbList.length - 1;
@@ -27,12 +27,12 @@ const Breadcrumb: React.FC<Props> = ({ breadcrumbList }) => {
                             {item.href && !isLast ? (
                                 <Link
                                     href={item.href}
-                                    className="text-sm font-medium text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white"
+                                    className="text-m font-medium text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-gray-700"
                                 >
                                     {item.label}
                                 </Link>
                             ) : (
-                                <span className="text-sm font-medium text-gray-500 dark:text-gray-400">
+                                <span className="text-m font-medium text-gray-500 dark:text-gray-400">
                                     {item.label}
                                 </span>
                             )}

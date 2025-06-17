@@ -4,7 +4,7 @@ export const Footer = () => {
             <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
                 <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
                     <div className="flex items-center space-x-2">
-                        <span className="text-sm font-medium text-gray-300">© 2025 Faro Mateo</span>
+                        <span className="text-sm font-medium text-gray-300">© 2025 Faro Meteo</span>
                     </div>
 
                     {/* Navigation Links */}
